@@ -64,6 +64,9 @@ class TrainDiffusionUnetHybridWorkspace(BaseWorkspace):
         # resume training
         if cfg.training.resume:
             lastest_ckpt_path = self.get_checkpoint_path()
+            # lastest_ckpt_path = "/root/autodl-tmp/diff/diffusion_policy/data/outputs/2023.06.16/16.23.27_train_diffusion_unet_hybrid_pusht_image/checkpoints/latest.ckpt"
+            # /root/autodl-tmp/diff/diffusion_policy/data/outputs/2023.06.16/17.07.43_train_diffusion_unet_hybrid_pusht_image/checkpoints/latest.ckpt
+            print("lastest_ckpt_path:",lastest_ckpt_path)
             if lastest_ckpt_path.is_file():
                 print(f"Resuming from checkpoint {lastest_ckpt_path}")
                 self.load_checkpoint(path=lastest_ckpt_path)

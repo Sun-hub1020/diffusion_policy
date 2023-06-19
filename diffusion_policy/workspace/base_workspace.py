@@ -71,7 +71,8 @@ class BaseWorkspace:
         return str(path.absolute())
     
     def get_checkpoint_path(self, tag='latest'):
-        return pathlib.Path(self.output_dir).joinpath('checkpoints', f'{tag}.ckpt')
+        # return pathlib.Path(self.output_dir).joinpath('checkpoints', f'{tag}.ckpt')
+        return pathlib.Path('/root/autodl-tmp/diff/diffusion_policy/data/outputs/2023.06.16/16.23.27_train_diffusion_unet_hybrid_pusht_image').joinpath('checkpoints', 'epoch=1850-test_mean_score=0.898.ckpt')
 
     def load_payload(self, payload, exclude_keys=None, include_keys=None, **kwargs):
         if exclude_keys is None:
